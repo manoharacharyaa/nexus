@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nexus/pallete.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const Nexus());
@@ -12,7 +14,10 @@ class Nexus extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Nexus',
-      theme: ThemeData.dark(useMaterial3: true).copyWith(),
+      theme: ThemeData.dark(useMaterial3: true).copyWith(
+        scaffoldBackgroundColor: Pallete.kAppTheme,
+      ),
+      home: const HomePage(),
     );
   }
 }
