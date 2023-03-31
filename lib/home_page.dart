@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
+          leading: Icon(Icons.menu),
           centerTitle: true,
           title: Text('Nexus'),
           flexibleSpace: Container(
@@ -31,6 +32,22 @@ class _HomePageState extends State<HomePage> {
                 colors: [Color(0XFF24243e), Color(0XFF302b63)],
               ),
             ),
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/voiceAssistant.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

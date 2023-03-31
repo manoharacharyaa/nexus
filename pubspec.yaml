@@ -23,6 +23,7 @@ flutter:
 
   assets:
     - assets/images/virtualAssistant.png
+    - assets/images/voiceAssistant.png
     - assets/sounds/
 
   fonts:
