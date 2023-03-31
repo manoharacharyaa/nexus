@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Pallete {
-  static const Color kAppTheme = Colors.deepPurple;
+  static const Color kAppBarTheme = Color(0XFF302b63);
 }
+
+

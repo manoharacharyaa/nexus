@@ -15,7 +15,7 @@ class Nexus extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Nexus',
       theme: ThemeData.dark(useMaterial3: true).copyWith(
-        scaffoldBackgroundColor: Pallete.kAppTheme,
+        appBarTheme: AppBarTheme(backgroundColor: Pallete.kAppBarTheme),
       ),
       home: const HomePage(),
     );
