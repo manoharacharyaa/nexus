@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nexus/feature_box.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -46,6 +47,21 @@ class _HomePageState extends State<HomePage> {
                     height: 100,
                   ),
                 ),
+              ),
+              FeatureBox(
+                headerText: 'Chat-Bot',
+                discriptionText:
+                    'A smarter way to stay organized and informed with Chat-Boat',
+              ),
+              FeatureBox(
+                headerText: 'Dall-E',
+                discriptionText:
+                    'Get inspired and stay creative with your personal assistant powered by Dall-E',
+              ),
+              FeatureBox(
+                headerText: 'Smart Voice Assistant',
+                discriptionText:
+                    'Get the best of both worlds with a voice assistant powered by AI',
               ),
             ],
           ),

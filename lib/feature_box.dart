@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 class FeatureBox extends StatelessWidget {
   const FeatureBox({
     super.key,
-    required this.colour,
     required this.headerText,
     required this.discriptionText,
   });
 
-  final Color colour;
   final String headerText;
   final String discriptionText;
 
@@ -16,32 +14,41 @@ class FeatureBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: 25,
+        horizontal: 20,
         vertical: 10,
       ),
       decoration: BoxDecoration(
-        color: colour,
-        borderRadius: BorderRadius.all(
-          Radius.circular(15),
+        gradient: LinearGradient(
+          begin: Alignment.bottomLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0XFF8E2DE2), Color(0XFF4A00E0)],
         ),
+        borderRadius: BorderRadius.circular(15),
       ),
-      child: Column(
-        children: [
-          Text(
-            headerText,
-            style: TextStyle(
-              fontFamily: 'Cera Pro',
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10)
+            .copyWith(left: 15, right: 10),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                headerText,
+                style: TextStyle(
+                  fontFamily: 'Cera Pro',
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-          ),
-          Text(
-            discriptionText,
-            style: TextStyle(
-              fontFamily: 'Cera Pro',
+            Text(
+              discriptionText,
+              style: TextStyle(
+                fontFamily: 'Cera Pro',
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
