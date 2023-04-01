@@ -39,12 +39,47 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 15),
                 child: Center(
                   child: Image.asset(
                     'assets/images/voiceAssistant.png',
                     width: 100,
                     height: 100,
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 22)
+                    .copyWith(top: 15),
+                decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.circular(15).copyWith(topLeft: Radius.zero),
+                  border: Border.all(
+                    color: Color(0XFF7062E8),
+                    width: 2,
+                  ),
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  child: Text(
+                    'Good Morning, what task can I do for you?',
+                    style: TextStyle(
+                      fontFamily: 'Cera Pro',
+                      fontSize: 23,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: EdgeInsets.only(top: 10, left: 25),
+                child: const Text(
+                  'Here are a few features',
+                  style: TextStyle(
+                    fontFamily: 'Cera Pro',
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -65,6 +100,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.mic),
+          backgroundColor: Color(0XFF7062E8),
         ),
       ),
     );

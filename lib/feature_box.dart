@@ -36,15 +36,20 @@ class FeatureBox extends StatelessWidget {
                 headerText,
                 style: TextStyle(
                   fontFamily: 'Cera Pro',
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
+            SizedBox(
+              height: 5,
+            ),
             Text(
               discriptionText,
               style: TextStyle(
+                fontWeight: FontWeight.bold,
                 fontFamily: 'Cera Pro',
+                fontSize: 17,
               ),
             ),
           ],
