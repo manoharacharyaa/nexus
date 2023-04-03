@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:nexus/feature_box.dart';
 import 'package:nexus/openai_service.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
@@ -13,12 +14,19 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final speeechToText = SpeechToText();
+  final FlutterTts flutterTts = FlutterTts();
   String lastWords = '';
   final OpenAIService openAIService = OpenAIService();
   @override
   void initState() {
     super.initState();
     initSpeechToText();
+    initTextToSpeech();
+  }
+
+  Future<void> initTextToSpeech() async {
+    await flutterTts.setSharedInstance(true);
+    setState(() {});
   }
 
   Future<void> initSpeechToText() async {
@@ -46,6 +54,11 @@ class _HomePageState extends State<HomePage> {
   void dispose() {
     super.dispose();
     speeechToText.stop();
+    flutterTts.stop();
+  }
+
+  Future<void> systemSpeak(String content) async {
+    await flutterTts.speak(content);
   }
 
   @override
@@ -147,7 +160,7 @@ class _HomePageState extends State<HomePage> {
               await startListening();
             } else if (speeechToText.isListening) {
               final speech = await openAIService.isArtpromptAPI(lastWords);
-              print(speech);
+              await systemSpeak(speech);
               await stopListening();
             } else {
               initSpeechToText();
